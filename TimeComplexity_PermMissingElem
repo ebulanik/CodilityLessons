@@ -1,0 +1,14 @@
+# An array A consisting of N different integers is given.
+# The array contains integers in the range [1..(N + 1)]
+# , which means that exactly one element is missing.
+#
+# Your goal is to find that missing element.
+
+def solution(A):
+    # write your code in Python 3.6
+    Nplus1 = len(A)+1
+    Sum = sum(A)
+    Sum_Nplus1 = Nplus1*(Nplus1+1)/2
+    missing = int(Sum_Nplus1) - Sum
+    
+    return (missing)
