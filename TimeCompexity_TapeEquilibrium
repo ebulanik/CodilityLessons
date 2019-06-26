@@ -5,13 +5,17 @@ def solution(A):
     # write your code in Python 3.6
     Tape_1sum = A[0]
     Tape_2sum = sum(A) - A[0]
-    min_diff = Abs_diff = abs(Tape_1sum - Tape_2sum)
+    min_diff = abs(Tape_1sum - Tape_2sum)
+    i=1
+    iterate = len(A)-2
     
-    for i in range(1, len(A)-2): 
+    while True:
+        if (min_diff == 0 or i > iterate):
+            break
         Tape_1sum += A[i]
         Tape_2sum -= A[i]
         Abs_diff = abs(Tape_1sum - Tape_2sum)
         if Abs_diff < min_diff:
             min_diff = Abs_diff
-    
+        i+=1
     return min_diff
